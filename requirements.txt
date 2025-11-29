@@ -1,0 +1,23 @@
+# Core Dependencies
+torch>=2.0.0
+torchvision>=0.15.0
+numpy>=1.24.0
+matplotlib>=3.7.0
+jupyter>=1.0.0
+notebook>=6.5.0
+
+# Visualization and Analysis
+seaborn>=0.12.0
+plotly>=5.14.0
+tqdm>=4.65.0
+
+# CUDA utilities (optional but recommended)
+pycuda>=2022.1
+cupy-cuda11x>=12.0.0  # Use cupy-cuda12x for CUDA 12+
+
+# Development tools
+ipywidgets>=8.0.0
+jupyterlab>=4.0.0
+
+# Optional: For advanced visualizations
+tensorboard>=2.12.0
