@@ -123,7 +123,7 @@ pip install --upgrade pip
 
 # Install PyTorch with CUDA 12.1 support
 pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
-
+sudo apt install nvidia-cuda-toolkit
 # Install remaining dependencies (this will take several minutes)
 pip install -r requirements.txt
 ```
@@ -336,3 +336,55 @@ If you encounter issues not covered here:
 **Happy Learning! 🚀**
 
 You're about to learn CUDA programming and build transformers from scratch. Enjoy the journey!
+
+## Q&A
+> what is the difference between "sudo apt-get install -y cuda-toolkit-12-6" and "sudo apt install nvidia-cuda-toolkit"? it seems "sudo apt install nvidia-cuda-toolkit" in venv fixed the pip install -r 
+requirements.txt error 
+
+● Excellent question! There's a significant difference between these two packages:
+
+  cuda-toolkit-12-6 (NVIDIA's Official Package)
+
+  - Source: NVIDIA's official repository (after installing cuda-keyring)
+  - Version: CUDA 12.6 (latest, matches your driver)
+  - Install location: /usr/local/cuda-12.6/
+  - Features: Complete, latest NVIDIA toolkit with all features
+  - Size: Larger, more comprehensive
+
+  nvidia-cuda-toolkit (Ubuntu's Package)
+
+  - Source: Ubuntu's default repository (no keyring needed)
+  - Version: Usually older (often CUDA 11.x or 12.0)
+  - Install location: /usr/lib/cuda/ or /usr/
+  - Features: Ubuntu's packaged version, may be trimmed down
+  - Size: Smaller, essential components only
+
+  Why nvidia-cuda-toolkit Worked
+
+  The Ubuntu package includes the essential development files needed for compiling pycuda/cupy:
+  - ✅ cuda.h and other headers
+  - ✅ nvcc compiler
+  - ✅ CUDA libraries for linking
+
+  For your learning purposes (compiling pycuda and running the tutorial), the Ubuntu version is perfectly fine!
+
+  Check Which Version You Got
+
+  Run this to see what version was installed:
+
+  nvcc --version
+  apt show nvidia-cuda-toolkit | grep Version
+
+  Recommendation
+
+  Keep using nvidia-cuda-toolkit since it already works! The advantages:
+  - ✅ Simpler installation (from Ubuntu repos)
+  - ✅ Already working
+  - ✅ Sufficient for the tutorial
+
+  The only time you'd need the official NVIDIA version is if:
+  - You need specific CUDA 12.6 features
+  - You're doing production development requiring exact version matching
+  - You need the absolute latest optimizations
+
+  For learning CUDA and transformers, what you have is great! 🎉
