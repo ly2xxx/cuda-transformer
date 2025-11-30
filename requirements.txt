@@ -13,7 +13,7 @@ tqdm>=4.65.0
 
 # CUDA utilities (optional but recommended)
 pycuda>=2022.1
-cupy-cuda11x>=12.0.0  # Use cupy-cuda12x for CUDA 12+
+cupy-cuda12x>=12.0.0  # For CUDA 12.x
 
 # Development tools
 ipywidgets>=8.0.0
