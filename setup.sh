@@ -1,5 +1,27 @@
 #!/bin/bash
 
+# nvidia-smi 2>/dev/null || echo "nvidia-smi not available"
+#   Check if NVIDIA driver is accessible in WSL2
+# nvcc --version 2>/dev/null || echo "nvcc not found"
+#    Check if CUDA compiler is installed
+
+#   1. Open WSL2/Ubuntu terminal (not PowerShell)
+#   2. Navigate to: cd /mnt/h/code/yl/cuda-transformer
+#   # Create a proper Linux virtual environment
+#   python3 -m venv venv
+
+#   # Activate it (note: venv/bin/activate, not .venv/Scripts/activate)
+#   source venv/bin/activate
+
+#   # Install dependencies
+#   
+
+#   # Convert Windows line endings to Unix
+#   sed -i 's/\r$//' setup.sh
+#   ./setup.sh
+#   3. Run: chmod +x setup.sh
+#   4. Run: ./setup.sh
+
 # CUDA Transformer Tutorial - Setup Script
 # This script automates the installation and verification process
 
